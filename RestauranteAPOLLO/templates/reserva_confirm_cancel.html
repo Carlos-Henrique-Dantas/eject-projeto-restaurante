@@ -1,0 +1,7 @@
+<h1>Cancelar Reserva</h1>
+<p>Tem certeza que deseja cancelar a reserva de {{ reserva.nome }} para {{ reserva.data }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sim, cancelar</button>
+    <a href="{% url 'minhas_reservas' %}">Voltar</a>
+</form>
