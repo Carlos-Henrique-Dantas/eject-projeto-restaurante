@@ -45,3 +45,16 @@ class Reserva(models.Model):
         
         if self.num_pessoas < 1:
             raise ValidationError("O número de pessoas deve ser pelo menos 1.")
+        
+    def atribuir_mesa_automaticamente(self):  
+        mesa_disponivel = Mesa.objects.filter(
+            capacidade__gte=self.numero_pessoas,
+            disponivel=True
+        ).order_by('capacidade').first()
+
+        if mesa_disponivel:
+            self.mesa = mesa_disponivel
+            self.status = 'confirmada'
+        else:
+            self.status = 'pendente'   
+
