@@ -1,0 +1,20 @@
+[
+  {
+    "model": "RestauranteAPOLLO.mesa",
+    "pk": 1,
+    "fields": {
+      "numero": 1,
+      "capacidade": 2,
+      "disponivel": true
+    }
+  },
+  {
+    "model": "RestauranteAPOLLO.mesa",
+    "pk": 2,
+    "fields": {
+      "numero": 2,
+      "capacidade": 4,
+      "disponivel": true
+    }
+  }
+]
