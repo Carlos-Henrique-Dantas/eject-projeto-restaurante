@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+
+#secao_banner_home{
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("imagens/bannerprincipal.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80vh;  
+    margin: 0; 
+}
+#secao_banner_home h1{
+    font-size: 5em;
+    padding: 0.2em;
+}
+#secao_banner_home h2{
+    font-size: large;
+    font-weight: normal;
+}
+#apollo{
+    color: #E17100;
+}
+button{
+    width: 200px;
+    height: 60px;
+    color: white;
+    background-color: #E17100;
+    border-radius: 7px;
+    border: none;
+    font-size: 20px;
+    margin-top: 2em;
+}
+button a{
+    color: white;
+}
+
+#secao_destaques{
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 2em;
+    padding-top: 1em;
+}
+#div_destaques{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding: 0.5em;
+}
+#div_destaques div{
+    width: 13em;
+    height: 23em;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease ;
+}
+#div_destaques div:hover{
+    border: 5px solid #E17100;
+}
+#secao_destaques h5{
+    padding: 0.7em;
+}
+#secao_destaques p{
+    text-align: left;
+    padding: 0.7em;
+}
+
+#secao_experiencia{
+    background-color: peru;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30em;
+}
+#div_venha_nos_conhecer_titulo_texto{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#div_venha_nos_conhecer_titulo_texto h3{
+    font-size: x-large;
+    padding: 1em;
+}
+#div_venha_nos_conhecer_texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+#div_experiencia{
+    background-color: black;
+    border: 2px solid white;
+    padding: 1em;
+}
+#div_secao_experiencia_fotos div{
+    display: grid;
+    grid-template-rows: 10em;
+    position: relative;
+    gap: initial;
+}
+#foto_esquerda{
+    position: absolute;
+    top: 80em;
+    left: 50em;
+}
+
+#nosso_espaco{
+    text-align: center;
+    padding: 2em;
+}
+#nosso_espaco h1{
+    margin-bottom: 1em;
+}
+.swiper {
+    max-width: 1118px;
+    max-height: 650px;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
