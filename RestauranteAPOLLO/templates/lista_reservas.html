@@ -1,0 +1,17 @@
+<h1>Minhas Reservas</h1>
+<ul>
+    {% for reserva in reservas %}
+        <li>
+            {{ reserva.nome }} - {{ reserva.data }} {{ reserva.horario }} ({{ reserva.num_pessoas }} pessoas)
+            - Status: {{ reserva.get_status_display }}
+            {# Depuração: mostre o valor real do status #}
+            (debug: "{{ reserva.status }}")
+            
+            {# Condição correta – aceita tanto 'pendente' quanto 'Pendente' #}
+            {% if reserva.status|lower == 'pendente' %}
+                <a href="{% url 'cancelar_reserva' reserva.pk %}">Cancelar</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+<p><a href="{% url 'nova_reserva' %}">Nova Reserva</a></p>
