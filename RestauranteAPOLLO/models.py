@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils import timezone
+from datetime import timedelta
 from django.core.exceptions import ValidationError
 
+# Terão 28 mesas com capacidade para até 6 pessoas
 class Mesa(models.Model): # Mesas cadastrada pelos funcionarios
     numero = models.PositiveIntegerField(unique=True, verbose_name="Número da Mesa")
     capacidade = models.PositiveIntegerField(default=1, validators="Capacidade máxima")
@@ -25,7 +27,7 @@ class Reserva(models.Model):
             ("pendente", "Pendente"), 
             ("confirmada", "Confirmada"), 
             ("cancelada","Cancelada")], 
-        default="Pendente") # Confirmar com o Cliente como deve funcionar essa confirmação.
+        default="Pendente") 
     criado_em = models.DateTimeField(auto_now_add=True)
     mesa = models.ForeignKey(Mesa, on_delete=models.PROTECT, null=True, blank=True, verbose_name= "Mesa Atribuida")
 
@@ -43,6 +45,13 @@ class Reserva(models.Model):
         if self.data < timezone.now().date():
             raise ValidationError("Não é possível realizar reserva para datas passadas.") 
         
+        data_hora_reserva = timezone.make_aware(timezone.datetime.combine(self.data, self.horario))
+        if data_hora_reserva < timezone.now() + timedelta(minutes=30):
+            raise ValidationError("As reservas devem ser feitas com pelo menos 30 minutos de antecedência.")
+
+        if self.horario > timezone.datetime.strptime("21:00", "%H:%M").time():
+            raise ValidationError("O horário máximo para reservas é até 21:00.")
+
         if self.num_pessoas < 1:
             raise ValidationError("O número de pessoas deve ser pelo menos 1.")
         
@@ -56,5 +65,5 @@ class Reserva(models.Model):
             self.mesa = mesa_disponivel
             self.status = 'confirmada'
         else:
-            self.status = 'pendente'   
-
+            self.status = 'pendente'
+            
