@@ -74,7 +74,7 @@ class Reserva(models.Model):
         
     def atribuir_mesa_automaticamente(self):  
         mesa_disponivel = Mesa.objects.filter(
-            capacidade__gte=self.numero_pessoas,
+            capacidade__gte=self.num_pessoas,
             disponivel=True
         ).order_by('capacidade').first()
 
@@ -84,3 +84,24 @@ class Reserva(models.Model):
         else:
             self.status = 'pendente'
             
+
+class Post(models.Model):
+    titulo = models.CharField(max_length=200, verbose_name='Título')
+    subtitulo = models.CharField(max_length=300, blank=True, verbose_name='Subtítulo')
+    conteudo = models.TextField(verbose_name='Conteúdo')
+    imagem = models.ImageField(upload_to='blog/', blank=True, null=True, verbose_name='Imagem de destaque')
+    autor = models.CharField(max_length=100, default='Equipe Apollo', verbose_name='Autor')
+    publicado_em = models.DateTimeField(auto_now_add=True, verbose_name='Publicado em')
+    atualizado_em = models.DateTimeField(auto_now=True, verbose_name='Atualizado em')
+    ativo = models.BooleanField(default=True, verbose_name='Publicado?')
+
+    class Meta:
+        verbose_name = 'Post'
+        verbose_name_plural = 'Posts'
+        ordering = ['-publicado_em']
+
+    def __str__(self):
+        return self.titulo
+
+    def resumo(self):
+        return self.conteudo[:200] + '...' if len(self.conteudo) > 200 else self.conteudo
