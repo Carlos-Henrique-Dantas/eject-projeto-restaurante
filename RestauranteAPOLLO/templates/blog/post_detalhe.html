@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.titulo }} | Blog Apollo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+        h1 {
+            color: #E17100;
+            margin-bottom: 0.5rem;
+        }
+        .subtitulo {
+            color: #555;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+        .post-meta {
+            color: #777;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .imagem-destaque {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .conteudo {
+            line-height: 1.6;
+            color: #333;
+        }
+        .conteudo p {
+            margin-bottom: 1rem;
+        }
+        .btn-voltar {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: #E17100;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .btn-voltar:hover {
+            background-color: #b85e00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ post.titulo }}</h1>
+        {% if post.subtitulo %}
+            <div class="subtitulo">{{ post.subtitulo }}</div>
+        {% endif %}
+        <div class="post-meta">
+            ✍️ {{ post.autor }} | 📅 {{ post.publicado_em|date:"d/m/Y \à\s H:i" }}
+        </div>
+        {% if post.imagem %}
+            <img src="{{ post.imagem.url }}" alt="{{ post.titulo }}" class="imagem-destaque">
+        {% endif %}
+        <div class="conteudo">
+            {{ post.conteudo|linebreaks }}
+        </div>
+        <a href="{% url 'lista_posts' %}" class="btn-voltar">← Voltar para o blog</a>
+    </div>
+</body>
+</html>
