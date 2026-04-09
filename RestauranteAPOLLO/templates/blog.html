@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <title>Blog - Restaurante Apollo</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Foto da logo">
+        </div> 
+        <nav>       
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'lista_posts' %}">Blog</a></li>
+                <li><a href="#">Sobre nós</a></li>
+            </ul>           
+        </nav>
+        <div>
+            <button id="button-header">Fazer reserva</button>
+        </div>
+    </header>
+
+    <main id="main_blog">
+        <section id="secao_blog">
+            <h1 class="titulo_pagina_blog">Nosso Blog</h1>
+            <p class="subtitulo_blog">Fique por dentro das novidades, dicas e histórias da nossa cozinha.</p>
+
+            <div id="container_blog">
+                
+                {% for post in object_list %}
+                <div class="card_blog">
+                    
+                    {% if post.imagem %}
+                        <img src="{{ post.imagem.url }}" alt="{{ post.titulo }}">
+                    {% else %}
+                        <img src="{% static 'imagens/foto_direita_cima.png' %}" alt="Imagem Padrão">
+                    {% endif %}
+                    
+                    <div class="conteudo_blog">
+                        <span class="data_post">{{ post.publicado_em|date:"d M, Y" }} • Por {{ post.autor }}</span>
+                        
+                        <h3>{{ post.titulo }}</h3>
+                        
+                        <p>{{ post.conteudo|truncatechars:120 }}</p>
+                        
+                        <a href="{% url 'post_detalhe' post.pk %}" class="btn_ler_mais">Ler mais &#8594;</a>
+                    </div>
+                </div>
+                {% empty %}
+                    <div class="aviso_vazio">
+                        <p>Nenhuma postagem publicada no momento. Volte em breve!</p>
+                    </div>
+                {% endfor %}
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer_logo">
+            <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+        </div>
+        <div id="footer_completo">
+            <div id="footer_contato">
+                <p>Contato</p>
+                <ul>
+                    <li>
+                        <div id="footer_celular">
+                            <img src="{% static 'imagens/Ícone Telefone.png' %}" alt="Imagem de um celular">
+                            <p>(11) 92234-5678</p>
+                        </div>
+                    <li>
+                        <div id="footer_email">
+                            <img src="{% static 'imagens/ÍCONE Email.png' %}" alt="Imagem de uma carta">
+                            <p>RestauranteApollo@gmail.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="footer_endereco">
+                            <img src="{% static 'imagens/Ícone localização.png' %}" alt="Imagem de uma ponteiro">
+                            <p>Avenida Roberto Freire, 123 - Natal/RN</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="footer_horario">
+                <p>Horário de Funcionamento</p>
+                <ul>
+                    <li>Segunda a sexta: 13h - 22h</li>
+                    <li>Sábado e domingo: 12h - 22h</li>
+                    <li>Feriados: 12h - 22h</li>
+                </ul>
+            </div>
+
+            <div id="footer_redes_sociais">
+                <p>Redes Sociais</p>
+                <ul id="icones">
+                    <li><img src="{% static 'imagens/Ícone facebook.png' %}" alt=""></li>
+                    <li><img src="{% static 'imagens/Ícone instagram.png' %}" alt=""></li>
+                    <li><img src="{% static 'imagens/Ícone Twitter.png' %}" alt=""></li>
+                </ul>
+            </div>
+            <img src="{% static 'imagens/loc.png' %}" alt="Foto de mapa">
+        </div>
+        <hr class="linha_curta">
+        <div class="EJECT">
+            <p class="EJECT_texto">MISSÃO EJECT</p>
+            <img src="{% static 'imagens/LOGO EJECT.png' %}" alt="">
+        </div>
+    </footer>
+</body>
+</html>
