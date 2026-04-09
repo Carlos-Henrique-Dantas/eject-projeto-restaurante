@@ -5,12 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+=======
+>>>>>>> refs/remotes/origin/develop
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
     <title>Restaurante Apollo - Squad 02</title>
 </head>
 <body>
+<<<<<<< HEAD
+    <header>
+        <div class="logo">
+            <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Foto da logo">
+        </div> 
+        <nav>       
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Sobre nós</a></li>
+            </ul>           
+        </nav>
+        <div>
+            <button id="button-header"><a href="#">Fazer reserva</a></button>
+        </div>
+    </header>
+=======
     {% include 'header.html' %}
 
+>>>>>>> refs/remotes/origin/develop
     <main id="main_home">
         <!-- banner -->
         <section id="secao_banner_home">
@@ -21,27 +44,79 @@
             </div>           
         </section>
 
+<<<<<<< HEAD
+        <dialog>
+            <img src="imagens/LOGO Apollo.png" alt="Logo do Restaurante Apollo">
+            <h2>Faça sua reserva</h2>
+
+            <form action="#">
+                <p>
+                    <label for="idNome">Nome completo</label>
+                    <input type="text" name="nome" id="idNome">
+                </p>
+                <p>
+                    <label for="idData">Data</label>
+                    <input type="date" name="data" id="idData">
+                </p>
+                <p>
+                    <label for="idHorario">Horário</label>
+                    <input type="time" name="horario" id="idHorario">
+                </p>
+                <p>
+                    <label for="idPessoas">Quantidade de pessoas</label>
+                    <select name="seletorPessoas" id="idPessoas">
+                        <option value="" selected></option>
+                        <option value="01P">Uma pessoa</option>
+                        <option value="02P">Duas pessoas</option>
+                        <option value="03P">Três pessoas</option>
+                        <option value="04P">Quatro pessoas</option>
+                        <option value="05P">Cinco pessoas</option>
+                        <option value="06P">Seis pessoas</option>
+                    </select>
+                </p>
+                <button>CONFIRMAR RESERVA</button>
+            </form> 
+        </dialog>
+
+=======
         <!-- destaques -->
+>>>>>>> refs/remotes/origin/develop
         <section id="secao_destaques">
             <h1>Destaques</h1>
             <div id="div_destaques">
                 <div id="div_destaques_chefs">
+<<<<<<< HEAD
+                    <img src="{% static 'imagens/chefs.png' %}" alt="Imagem de um chapéu de cozinheiro - Toque Blanche">
+=======
                     <img src="{% static 'imagens/chefs.png' %}" alt="Imagem de um chapéu de cozinheiro">
+>>>>>>> refs/remotes/origin/develop
                     <h5>Chef's capacitados</h5>
                     <p>Nossa equipe de chefs especializados cria pratos únicos com técnicas refinadas.</p>
                 </div>
                 <div id="div_destaques_vantagens_local">
+<<<<<<< HEAD
+                    <img src="{% static 'imagens/vantagens.png' %}" alt="Imagem de uma garfo e uma faca cruzados">
+=======
                     <img src="{% static 'imagens/vantagens.png' %}" alt="Imagem de um garfo e uma faca">
+>>>>>>> refs/remotes/origin/develop
                     <h5>Vantagens do local</h5>
                     <p>Bem localizado e altamente confortável, aconchegante para você e sua família.</p>
                 </div>
                 <div id="div_destaques_premiacoes">
+<<<<<<< HEAD
+                    <img src="{% static 'imagens/premios.png' %}" alt="Imagem de uma medalha">
+=======
                     <img src="{% static 'imagens/premios.png' %}" alt="Medalha">
+>>>>>>> refs/remotes/origin/develop
                     <h5>Premiações</h5>
                     <p>Reconhecido por diversas revistas gastronômicas e críticos renomados.</p>
                 </div>
                 <div id="div_destaques_horarios">
+<<<<<<< HEAD
+                    <img src="{% static 'imagens/horarios.png' %}" alt="Imagem de um relógio">
+=======
                     <img src="{% static 'imagens/horarios.png' %}" alt="Relógio">
+>>>>>>> refs/remotes/origin/develop
                     <h5>Horários</h5>
                     <p>Aberto todos os dias com horários estendidos. De 13h às 22h.</p>
                 </div>
@@ -62,10 +137,17 @@
             </div>
             <div id="div_secao_experiencia_fotos">
                 <div>
+<<<<<<< HEAD
+                    <img src="{% static 'imagens/foto_direita_cima.png' %}" alt="Foto de um prato do Restaurante">
+                    <img src="{% static 'imagens/foto_direita_baixo.png' %}" alt="Foto de um prato do Restaurante">
+                </div>
+                <img src="{% static 'imagens/foto_esquerda.png' %}" alt="Foto de um prato do Restaurante" id="foto_esquerda">
+=======
                     <img src="{% static 'imagens/foto_direita_cima.png' %}" alt="Prato">
                     <img src="{% static 'imagens/foto_direita_baixo.png' %}" alt="Prato">
                 </div>
                 <img src="{% static 'imagens/foto_esquerda.png' %}" alt="Prato" id="foto_esquerda">
+>>>>>>> refs/remotes/origin/develop
             </div>
         </section>
 
@@ -73,6 +155,84 @@
         <section id="nosso_espaco">
             <h1>Nosso Espaço</h1>
             <div class="swiper mySwiper">
+<<<<<<< HEAD
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="{% static 'imagens/img1.png' %}" alt="Fotos do ambiente"></div>
+                <div class="swiper-slide"><img src="{% static 'imagens/img2.png' %}" alt="Fotos do ambiente"></div>
+                <div class="swiper-slide"><img src="{% static 'imagens/img3.png' %}" alt="Fotos do ambiente"></div>
+                <div class="swiper-slide"><img src="{% static 'imagens/img4.png' %}" alt="Fotos do ambiente"></div>
+              </div>
+            </div>
+        </section>
+            
+
+            <!-- Parte do JS -->
+            <!-- Swiper JS -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
+              var swiper = new Swiper(".mySwiper", {});
+            </script>
+            <!-- TERMINO DO JS -->
+
+    </main>
+
+    <footer>
+        <div id="footer_logo">
+            <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+        </div>
+        <div id="footer_completo">
+            <div id="footer_contato">
+                <p>Contato</p>
+                <ul>
+                    <li>
+                        <div id="footer_celular">
+                            <img src="{% static 'imagens/Ícone Telefone.png' %}" alt="Imagem de um celular">
+                            <p>(11) 92234-5678</p>
+                        </div>
+                    <li>
+                        <div id="footer_email">
+                            <img src="{% static 'imagens/ÍCONE Email.png' %}" alt="Imagem de uma carta">
+                            <p>RestauranteApollo@gmail.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="footer_endereco">
+                            <img src="{% static 'imagens/Ícone localização.png' %}" alt="Imagem de uma ponteiro">
+                            <p>Avenida Roberto Freire, 123 - Natal/RN</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="footer_horario">
+                <p>Horário de Funcionamento</p>
+                <ul>
+                    <li>Segunda a sexta: 13h - 22h</li>
+                    <li>Sábado e domingo: 12h - 22h</li>
+                    <li>Feriados: 12h - 22h</li>
+                </ul>
+            </div>
+
+            <div id="footer_redes_sociais">
+                <p>Redes Sociais</p>
+                <ul id="icones">
+                    <li><img src="{% static 'imagens/Ícone facebook.png' %}" alt=""></li>
+                    <li><img src="{% static 'imagens/Ícone instagram.png' %}" alt=""></li>
+                    <li><img src="{% static 'imagens/Ícone Twitter.png' %}" alt=""></li>
+                </ul>
+            </div>
+            <img src="{% static 'imagens/loc.png' %}" alt="Foto de mapa">
+        </div>
+        <hr class="linha_curta">
+        <div class="EJECT">
+            <p class="EJECT_texto">MISSÃO EJECT</p>
+            <img src="{% static 'imagens/LOGO EJECT.png' %}" alt="">
+        </div>
+    </footer>
+
+=======
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><img src="{% static 'imagens/img1.png' %}" alt="Ambiente"></div>
                     <div class="swiper-slide"><img src="{% static 'imagens/img2.png' %}" alt="Ambiente"></div>
@@ -87,5 +247,6 @@
     <script>
         var swiper = new Swiper(".mySwiper", {});
     </script>
+>>>>>>> refs/remotes/origin/develop
 </body>
 </html>
