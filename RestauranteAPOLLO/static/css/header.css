@@ -41,7 +41,7 @@ nav a{
     max-height: 50px;
     width: auto;
 }
-button{
+#button-header{
     width: 200px;
     height: 60px;
     color: white;
@@ -49,8 +49,9 @@ button{
     border-radius: 7px;
     border: none;
     font-size: 20px;
+    margin: 0;
 }
-button a{
+#button-header a{
     color: white;
     text-decoration: none;
 }

@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <title>Restaurante Apollo - Squad 02</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Foto da logo">
+        </div> 
+        <nav>       
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="sobre_nos.html">Sobre nós</a></li>
+            </ul>           
+        </nav>
+        <div>
+            <button id="button-header">Fazer reserva</button>
+        </div>
+    </header>
+
+    <main>
+        <!--HMTL DOS CARDS DO BLOG-->
+
+        
+        
+        
+        <div id="card_blog">
+            <img src="#" alt="">
+            <h5>Insira título</h5>
+            <p>Insira data de publicação</p>
+            <p>Insira texto</p>
+        </div>
+
+
+
+
+
+
+
+    </main>
+
+    <footer>
+        <div id="footer_logo">
+            <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+        </div>
+        <div id="footer_completo">
+            <div id="footer_contato">
+                <p>Contato</p>
+                <ul>
+                    <li>
+                        <div id="footer_celular">
+                            <img src="{% static 'imagens/Ícone Telefone.png' %}" alt="Imagem de um celular">
+                            <p>(11) 92234-5678</p>
+                        </div>
+                    <li>
+                        <div id="footer_email">
+                            <img src="{% static 'imagens/ÍCONE Email.png' %}" alt="Imagem de uma carta">
+                            <p>RestauranteApollo@gmail.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="footer_endereco">
+                            <img src="{% static 'imagens/Ícone localização.png' %}" alt="Imagem de uma ponteiro">
+                            <p>Avenida Roberto Freire, 123 - Natal/RN</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="footer_horario">
+                <p>Horário de Funcionamento</p>
+                <ul>
+                    <li>Segunda a sexta: 13h - 22h</li>
+                    <li>Sábado e domingo: 12h - 22h</li>
+                    <li>Feriados: 12h - 22h</li>
+                </ul>
+            </div>
+
+            <div id="footer_redes_sociais">
+                <p>Redes Sociais</p>
+                <ul id="icones">
+                    <li><img src="{% static 'imagens/Ícone facebook.png' %}" alt=""></li>
+                    <li><img src="{% static 'imagens/Ícone instagram.png' %}" alt=""></li>
+                    <li><img src="{% static 'imagens/Ícone Twitter.png' %}" alt=""></li>
+                </ul>
+            </div>
+            <img src="{% static 'imagens/loc.png' %}" alt="Foto de mapa">
+        </div>
+        <hr class="linha_curta">
+        <div class="EJECT">
+            <p class="EJECT_texto">MISSÃO EJECT</p>
+            <img src="{% static 'imagens/LOGO EJECT.png' %}" alt="">
+        </div>
+    </footer>
+</body>
+</html>
