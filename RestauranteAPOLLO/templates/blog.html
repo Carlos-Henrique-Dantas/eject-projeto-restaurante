@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
-    <title>Restaurante Apollo - Squad 02</title>
+    <title>Blog - Restaurante Apollo</title>
 </head>
 <body>
     <header>
@@ -17,9 +17,9 @@
         </div> 
         <nav>       
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="sobre_nos.html">Sobre nós</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'lista_posts' %}">Blog</a></li>
+                <li><a href="#">Sobre nós</a></li>
             </ul>           
         </nav>
         <div>
@@ -27,25 +27,39 @@
         </div>
     </header>
 
-    <main>
-        <!--HMTL DOS CARDS DO BLOG-->
+    <main id="main_blog">
+        <section id="secao_blog">
+            <h1 class="titulo_pagina_blog">Nosso Blog</h1>
+            <p class="subtitulo_blog">Fique por dentro das novidades, dicas e histórias da nossa cozinha.</p>
 
-        
-        
-        
-        <div id="card_blog">
-            <img src="#" alt="">
-            <h5>Insira título</h5>
-            <p>Insira data de publicação</p>
-            <p>Insira texto</p>
-        </div>
-
-
-
-
-
-
-
+            <div id="container_blog">
+                
+                {% for post in object_list %}
+                <div class="card_blog">
+                    
+                    {% if post.imagem %}
+                        <img src="{{ post.imagem.url }}" alt="{{ post.titulo }}">
+                    {% else %}
+                        <img src="{% static 'imagens/foto_direita_cima.png' %}" alt="Imagem Padrão">
+                    {% endif %}
+                    
+                    <div class="conteudo_blog">
+                        <span class="data_post">{{ post.publicado_em|date:"d M, Y" }} • Por {{ post.autor }}</span>
+                        
+                        <h3>{{ post.titulo }}</h3>
+                        
+                        <p>{{ post.conteudo|truncatechars:120 }}</p>
+                        
+                        <a href="{% url 'post_detalhe' post.pk %}" class="btn_ler_mais">Ler mais &#8594;</a>
+                    </div>
+                </div>
+                {% empty %}
+                    <div class="aviso_vazio">
+                        <p>Nenhuma postagem publicada no momento. Volte em breve!</p>
+                    </div>
+                {% endfor %}
+                </div>
+        </section>
     </main>
 
     <footer>

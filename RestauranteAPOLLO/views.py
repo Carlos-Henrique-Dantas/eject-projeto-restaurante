@@ -52,11 +52,11 @@ def home(request):
 
 class PostListView(ListView):
     model = Post
-    template_name = 'blog/lista_posts.html'
+    template_name = 'blog.html'
     context_object_name = 'posts'
     queryset = Post.objects.filter(ativo=True)
 
 class PostDetailView(DetailView):
     model = Post
-    template_name = 'blog/post_detalhe.html'
+    template_name = 'post_detalhe.html'
     context_object_name = 'post'
