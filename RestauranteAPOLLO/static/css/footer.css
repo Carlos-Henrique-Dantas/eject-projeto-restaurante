@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
+body{
+    margin: 0 auto;
+    padding: 0 auto;
     font-family: 'Inter', sans-serif;
 }
 
@@ -14,12 +14,16 @@ footer{
 #footer_completo{
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     margin-left: 5em;
     margin-right: 5em;
 }
+#footer_contato{
+    display: flex;
+    flex-direction: column;
+}
 #footer_contato div{
     display: flex;
+    align-items: center;
     gap: 10px;
 
 }
@@ -29,11 +33,12 @@ footer{
     margin-top: 5px;
 }
 
-ul{
-    list-style: none;
-    padding-top: 1em;
+#footer_horario{
+    display: flex;
+    flex-direction: column;
+
 }
-li{
+footer p{
     font-weight: lighter;
 }
 #footer_logo{
@@ -55,4 +60,34 @@ li{
 }
 .EJECT_texto{
     font-weight: lighter;
+}
+
+@media (max-width: 768px) {
+
+    #footer_completo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #footer_contato div {
+        justify-content: center;
+    }
+
+    #footer_horario {
+        align-items: center;
+    }
+
+    #icones {
+        justify-content: center;
+    }
+
+    #footer_completo > img {
+        max-width: 100%;
+    }
+
+    #footer_logo img {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

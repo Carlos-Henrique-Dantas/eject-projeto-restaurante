@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body{
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 0 auto;
     font-family: 'Inter', sans-serif;
 }
 
@@ -14,7 +14,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("../imagens/bannerprincipal.png");
+    background-image: url("imagens/bannerprincipal.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -22,7 +22,7 @@ body{
     margin: 0; 
 }
 #secao_banner_home h1{
-    font-size: 5em;
+    font-size: 4em;
     padding: 0.2em;
 }
 #secao_banner_home h2{
@@ -40,13 +40,7 @@ button{
     border-radius: 7px;
     border: none;
     font-size: 20px;
-    margin-top: 2em;
 }
-button a{
-    color: white;
-    text-decoration: none;
-}
-
 #secao_destaques{
     text-align: center;
     background-color: whitesmoke;
@@ -162,108 +156,575 @@ dialog{
     box-shadow: 0 0 1rem rgb(0 0 0 / .3);
 }
 
-
-
-/* =========================================
-   ESTILOS DA PÁGINA DO BLOG
-   ========================================= */
-#secao_blog {
-    padding: 4em 5%;
-    background-color: #fcfcfc;
+#banner_sobre_nos{
+    background-color: #262626;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 25em;
+}
+#banner_sobre_nos h2{
+    font-weight: lighter;
+}
+#banner_sobre_nos h1{
+    font-size: 4em;
+}
+#nossa_historia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+#nossa_historia h1{
+    font-size: 3em;
     text-align: center;
 }
-
-.titulo_pagina_blog {
-    font-size: 2.8em;
-    color: #222;
-    margin-bottom: 0.2em;
+.nossa_historia_texto_e_imagem{
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+    margin-left: 15em;
+    margin-right: 15em;
+    margin-top: 80px;
+}
+.nossa_historia_p{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
-.subtitulo_blog {
-    color: #666;
-    font-size: 1.1em;
-    margin-bottom: 3em;
-}
+#missao_visao_valores{
+    background-color: whitesmoke;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5em;
 
-#container_blog {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 35px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
-
-.card_blog {
+#missao_visao_valores h1{
+    font-size: 3em;
+}
+.missao_visao_valores_individual{
+    width: 240px;
+    height: 334px;
+    text-align: center;
     background-color: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 8px 10px -6px rgba(0,0,0,0.5);
+    border-radius: 7%;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.missao_visao_valores_conjunto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 160px;
 }
 
-.card_blog:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-}
-
-.card_blog img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    border-bottom: 4px solid #E17100;
-}
-
-.conteudo_blog {
-    padding: 25px;
+.funcionario_individual{
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
 }
-
-.data_post {
-    font-size: 0.85em;
-    color: #888;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.funcionario_individual p{
+    font-size: xx-small;
 }
-
-.conteudo_blog h3 {
-    font-size: 1.4em;
-    color: #111;
-    margin-bottom: 15px;
-    line-height: 1.3;
-}
-
-.conteudo_blog p {
-    font-size: 1em;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    flex-grow: 1;
-}
-
-.btn_ler_mais {
-    text-decoration: none;
+.funcionario_individual h6{
     color: #E17100;
-    font-weight: 700;
-    font-size: 1em;
-    transition: color 0.2s ease;
-    align-self: flex-start;
 }
-
-.btn_ler_mais:hover {
-    color: #b35900;
-}
-
-.aviso_vazio {
-    grid-column: 1 / -1;
-    padding: 3em;
-    color: #666;
-    font-size: 1.2em;
-    background-color: #eee;
+.funcionarios_foto{
+    width: 352px;
+    height: 190px;
     border-radius: 10px;
 }
+.funcionarios{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    padding-bottom: 2em;
+}
+#nossa_equipe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.nossa_equipe_texto{
+    text-align: center;
+    margin: 45px;
+}
+.nossa_equipe_texto h1{
+    font-size: 3em;
+}
+.nossa_equipe_texto h2{
+    font-weight: normal;
+    font-size: 1em;
+    margin-top: 10px;
+}
+#secao_servicos{
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 80px 20px;
+}
+#secao_servicos h1{
+    font-size: 3em;
+}
+.nossos_servicos_individual{
+    width: 352px;
+    height: 256px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0px 8px 10px -6px rgba(0,0,0,0.5);
+    border-radius: 7px;
+    background-color: white;
+}
+.nossos_servicos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    margin-bottom: 70px;
+}
+
+
+.noticia_blog{
+    width: 480px;
+    height: 460px;
+    box-shadow: 0px 8px 10px -6px rgba(0,0,0,0.5);
+}
+.noticia_blog img{
+    max-width: 480px;
+    max-height: 192px;
+}
+.noticia_blog p{
+    color: #525252;
+}
+.data_blog{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.data_blog p{
+    color: #737373;
+    font-size: medium;
+}
+.secao_blog{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 80px;
+}
+.texto_blog{
+    margin: 0 25px;
+}
+.texto_blog h3{
+    margin-top: 0;
+}
+.titulo_blog{
+    margin: 0;
+}
+
+.butao_blog{
+    background-color: #E17100;
+    color: white;
+    font-size: 18px;
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+
+}
+.contener{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+dialog{
+    width: 540px;
+    height: 700px;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+}
+.fechar-modal {
+    position: absolute;
+    top: 25px;
+    right: 45px;
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    color: #000;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+dialog[open] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+dialog form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+dialog input{
+    width: 450px;
+    height: 60px;
+    border: 2px solid #BBBBBB;
+    border-radius: 7px;
+    outline: unset;
+}
+dialog select{
+    width: 450px;
+    height: 60px;
+    border-radius: 7px;
+    border: 2px solid #BBBBBB;
+}
+dialog form div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.info_formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.butao_reserva{
+    width: 450px;
+    height: 40px;
+    font-size: small;
+    font-weight: bold;
+}
+.titulo_blog_completo{
+    color: #E17100;
+}
+.creditosBlog{
+    display: flex;
+    gap: 10px;
+    padding-top: 0;
+    padding-bottom: 2em;
+}
+.creditosBlog span{
+    color: #737373;
+    font-size: small;
+}
+.fechar_blog{
+    position: relative;
+}
+.texto_completo_blog{
+    display: flex;
+}
+.conteudoArtigo{
+    width: 80%;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    text-align: left;
+    box-shadow: 0px 8px 10px -6px rgba(0,0,0,0.5);
+}
+.imagemBlog{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.imagemBlog p{
+    font-size: smaller;
+    color: #525252;
+}
+#abs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+hr{
+   border: 0.1px solid #262626;
+}
+.conteudoArtigo button{
+    position: relative;
+    left: 6px;
+    font-size: medium;
+    width: 10em;
+    background-color: #E17100;
+    color: white;
+}
+.conteudoArtigo h1{
+    font-size: 3em;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    #div_destaques {
+    flex-direction: column;
+  }
+  .nossa_historia_texto_e_imagem {
+    flex-direction: column;
+    margin: 20px;
+  }
+  .missao_visao_valores_conjunto {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .funcionarios {
+    flex-direction: column;
+  }
+  .nossos_servicos {
+    flex-direction: column;
+  }
+  #secao_banner_home h1 {
+    font-size: 2em;
+  }
+  dialog {
+    width: 90%;
+    height: auto;
+  }
+
+  dialog input,
+  dialog select,
+  .butao_reserva {
+    width: 100%;
+  }
+  #div_destaques div{
+    height: 20em;
+    padding: 0 auto;
+  }
+  body h1{
+    font-size: 2em;
+  }
+  #secao_experiencia{
+    display: block;
+    height: auto;
+    padding: 10px;
+  }
+  #div_venha_nos_conhecer_titulo_texto h3{
+    padding: 0;
+  }
+  #div_venha_nos_conhecer_texto{
+    padding: 0%;
+  }
+  #div_venha_nos_conhecer_texto p{
+    margin: 5px;
+  }
+  #div_experiencia{
+    padding: 5px;
+    border: 1px solid white;
+    margin: 5px;
+  }
+  #div_secao_experiencia_fotos img{
+    position: initial;
+    width: 40vw;
+  }
+  #div_secao_experiencia_fotos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  }
+  #div_secao_experiencia_fotos div{
+    grid-template-rows: 4.5em;
+  }
+  .missao_visao_valores_individual{
+    width: 150px;
+    height: 260px;
+    gap: 0%;
+  }
+  .missao_visao_valores_conjunto{
+    margin-top: 0;
+  }
+  .missao_visao_valores_individual h5{
+    margin: 5px;
+    font-size: 15px;
+
+  }
+  .missao_visao_valores_individual p{
+    font-size: small;
+  }
+  #banner_sobre_nos h1{
+    font-size: 2em;
+  }
+  #banner_sobre_nos h2{
+    font-size: 1em;
+  }
+  #banner_sobre_nos{
+    height: 15em;
+  }
+  #nossa_historia h1{
+    font-size: 2em;
+    margin: 0;
+
+  }
+  #nossa_historia{
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .nossa_historia_texto_e_imagem{
+    font-size: small;
+  }
+  .nossa_historia_img img{
+    width: 200px;
+  }
+   #missao_visao_valores{
+    height: fit-content;
+    row-gap: 0;
+    padding: 20px;
+   }
+  #missao_visao_valores h1{
+    font-size: 2em;
+
+  }#nossa_equipe h1{
+    font-size: 2em;
+  }
+  #nossa_equipe{
+    margin: 0;
+  }
+  .funcionario_individual{
+    gap: 0;
+  }
+  #secao_servicos h1{
+    font-size: 2em;
+  }
+  #secao_servicos{
+    padding: 0%;
+    gap: 0;
+  }
+  .nossos_servicos{
+    gap: 10px;
+  }
+  .nossos_servicos_individual{
+    width: 200px;
+    height: 190px;
+  }
+  .noticia_blog{
+    width: 400px;
+    height: 350px;
+  }
+  .noticia_blog img{
+    width: 400px;
+  }
+  .data_blog{
+    gap: 3px;
+  }
+  .data_blog p{
+    row-gap: 0;
+    font-size: 10px;
+  }
+  .data_blog img{
+    width: 10px;
+  }
+  .titulo_blog{
+    font-size: medium;
+  }
+  .previa_blog{
+    font-size: smaller;
+    margin: 0;
+  }
+  .butao_blog{
+    font-size: x-small;
+    width: 70px;
+    height: 25px;
+  }
+  .reserva{
+    width: 350px;
+    height: 500px;
+  }
+  .reserva input{
+    width: 280px;
+    height: 40px;
+  }
+  .info_formulario{
+    column-gap: 2px;
+    font-size: smaller;
+  }
+  .info_formulario select{
+    column-gap: 0;
+    font-size: smaller;
+    width: 280px;
+    height: 40px;
+  }
+  .cabecalho_form h2{
+    font-size: medium;
+  }
+  .cabecalho_form img{
+    width: 100px;
+  }
+  .cabecalho_form{
+    text-align: center;
+   }
+   .fechar-modal{
+    font-size: medium;
+   }
+   .conteudoArtigo{
+    width: 320px;
+    height: fit-content;
+   }
+   .texto{
+    font-size: small;
+   }
+   .conteudoArtigo h1{
+    font-size: 1em;
+   }
+   
+   .creditosBlog img{
+    display: none;
+   }
+   .creditosBlog span {
+    font-size: small;
+   }
+   .creditosBlog{
+    column-gap: 4px;
+    padding-bottom: 0;
+   }
+   .imagemBlog img{
+    width: 315px;
+   }
+   .imagemBlog p{
+    margin: 0;
+   }
+   article{
+    font-size: small;
+   }
+   aside{
+    display: none;
+   }
+   .fechar-modal.fechar-blog{
+    font-size: x-small;
+    width: 90px;
+    height: 20px;
+   }
+
+
+}
+
+

@@ -7,86 +7,260 @@
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    <title>Document</title>
+    <title>Restaurante Apollo - Squad 02</title>
 </head>
 <body>
-    
     <header>
         <div class="logo">
             <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Foto da logo">
         </div> 
         <nav>       
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="sobre_nos.html">Sobre nós</a></li>
+                <li><a href="{% url 'index.html' %}">Home</a></li>
+                <li><a href="{% url 'blog.html' %}">Blog</a></li>
+                <li><a href="{% url 'sobre_nos.html' %}">Sobre nós</a></li>
             </ul>           
         </nav>
         <div>
-            <button id="button-header">Fazer reserva</button>
+            <button class="abrir-modal" data-modal="reservaModal">Fazer reserva</button>
         </div>
     </header>
-
-
-    
     <main>
 
+        <dialog id="reservaModal" class="reserva">
+            <button class="fechar-modal fechar-reserva" type="button">✕</button>
+            <div>
+                 <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+                <h2>Faça sua reserva</h2>
+            </div>
+            <form action="#">
+                <div class="info_formulario">
+                    <label for="idNome">Nome completo</label>
+                    <input placeholder="Digite seu nome" name="nome" id="idNome">
+                </div>
+                <div class="info_formulario">
+                    <label for="idData">Data</label>
+                    <input type="date" name="data" id="idData">
+                </div>
+                <div class="info_formulario">
+                    <label for="idHorario">Horário</label>
+                    <input type="time" name="horario" id="idHorario">
+                </div>
+                <div class="info_formulario">
+                    <label for="idPessoas">Quantidade de pessoas</label>
+                    <select name="seletorPessoas" id="idPessoas">
+                        <option value="" selected></option>
+                        <option value="01P">Uma pessoa</option>
+                        <option value="02P">Duas pessoas</option>
+                        <option value="03P">Três pessoas</option>
+                        <option value="04P">Quatro pessoas</option>
+                        <option value="05P">Cinco pessoas</option>
+                        <option value="06P">Seis pessoas</option>
+                    </select>
+                </div>
+                <button type="submit" class="butao_reserva">CONFIRMAR RESERVA</button>
+            </form> 
+        </dialog>
+
+
+
+        <section id="banner_sobre_nos">
+                <h1>Sobre Nós</h1>
+            <h2>Conheça a história por trás do nosso restaurante!</h2>
+        </section>
+
+        <section id="nossa_historia">
+            <h1>Nossa história</h1>
+            <div class="nossa_historia_texto_e_imagem">
+                <div class="nossa_historia_p">
+                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quo, blanditiis dolorum ab adipisci commodi autem facilis aut illo non harum, vel quia quae, eius corporis fugiat veritatis earum unde! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque dicta tenetur illum pariatur alias dolor, ducimus magni in officiis accusantium atque odit enim quidem nobis voluptatum beatae, minus facere saepe? Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis est tempora voluptatibus magni perferendis fugiat possimus? Non, provident velit? Non consequatur iusto, dolores dolorem voluptatum repellendus adipisci incidunt delectus aspernatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam perspiciatis optio dolorem ducimus quas dolores facere odio modi enim rerum dolor veritatis voluptatem a dolore sapiente distinctio consequuntur, quasi aliquam.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quo, blanditiis dolorum ab adipisci commodi autem facilis aut illo non harum, vel quia quae, eius corporis fugiat veritatis earum unde! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione culpa, consequatur itaque molestias impedit molestiae esse adipisci quo distinctio totam temporibus quis dicta doloremque neque nesciunt debitis amet? Id, nesciunt? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis suscipit voluptatum quibusdam modi non fuga aliquid, repudiandae ab? Blanditiis illum ad enim reiciendis tempora dicta porro dignissimos quos quas facilis! Lorem ipsum dolor sit amet consectetur adipisicing elit lorem</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quo, blanditiis dolorum ab adipisci commodi autem facilis aut illo non harum, vel quia quae, eius corporis fugiat veritatis earum unde! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium voluptatum minus beatae vitae amet quidem, minima libero soluta natus? Repudiandae voluptatem architecto laudantium tempore minima obcaecati repellendus inventore recusandae quaerat! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis, facere esse. Consequuntur laudantium magni quasi nemo dolores rem hic reprehenderit maxime. Sit praesentium non et. Quis pariatur magnam nemo eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati suscipit voluptates asperiores, veniam velit neque enim, recusandae quisquam rem iusto dicta maiores. Maxime quia incidunt enim repellat optio, tenetur animi. lorem</p>
+                </div>
+                <div class="nossa_historia_img">
+                    <img src="{static % 'imagens/Imagem nossa história 1.png' %}" alt="">
+                    <img src="{static % 'imagens/Imagem nossa história 2.png' %}" alt="">
+                </div>
+            </div>
+        </section>
+
+        <dialog class="reserva">
+            <button class="fechar-modal" type="button">✕</button>
+            <div>
+                 <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+                <h2>Faça sua reserva</h2>
+            </div>
+            <form action="#">
+                <div class="info_formulario">
+                    <label for="idNome">Nome completo</label>
+                    <input placeholder="Digite seu nome" name="nome" id="idNome">
+                </div>
+                <div class="info_formulario">
+                    <label for="idData">Data</label>
+                    <input type="date" name="data" id="idData">
+                </div>
+                <div class="info_formulario">
+                    <label for="idHorario">Horário</label>
+                    <input type="time" name="horario" id="idHorario">
+                </div>
+                <div class="info_formulario">
+                    <label for="idPessoas">Quantidade de pessoas</label>
+                    <select name="seletorPessoas" id="idPessoas">
+                        <option value="" selected></option>
+                        <option value="01P">Uma pessoa</option>
+                        <option value="02P">Duas pessoas</option>
+                        <option value="03P">Três pessoas</option>
+                        <option value="04P">Quatro pessoas</option>
+                        <option value="05P">Cinco pessoas</option>
+                        <option value="06P">Seis pessoas</option>
+                    </select>
+                </div>
+                <button class="butao_reserva">CONFIRMAR RESERVA</button>
+            </form> 
+        </dialog>
+        
+        <section id="missao_visao_valores">
+            <h1>Missão, visão e valores</h1>
+            <div class="missao_visao_valores_conjunto">
+                <div class="missao_visao_valores_individual">
+                    <img src="{static % 'imagens/Frame 34.png' %}" alt="">
+                    <h5>Missão</h5>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus quo consectetur expedita r</p>
+                </div>
+                <div class="missao_visao_valores_individual">
+                    <img src="{static % 'imagens/ícone visão.png' %}" alt="">
+                    <h5>Visão</h5>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus quo consectetur expedita r</p>
+                </div>
+                <div class="missao_visao_valores_individual">
+                    <img src="{static % 'imagens/ícone valores.png' %}" alt="">
+                    <h5>Valores</h5>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus quo consectetur expedita r</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="nossa_equipe">
+            <div class="nossa_equipe_texto">
+                <h1>Nossa Equipe</h1>
+                <h2>Conheça os profissionais mais talentosos da casa!</h2>
+            </div>
+        
+            <div class="funcionarios">
+                <div class="funcionario_individual">
+                    <img class="funcionarios_foto" src="{static % 'imagens/ricardoalmeida.jpeg' %}" alt="">
+                    <h4>Ricardo Almeida</h4>
+                    <h6>Chefe executivo</h6>
+                    <p>Mestre em culinária italiana com 20 anos de experiência</p>
+                </div>
+                <div class="funcionario_individual">
+                    <img class="funcionarios_foto" src="camiladuarte" alt="">
+                    <h4>Camila Duarte</h4>
+                    <h6>Sous-Chef</h6>
+                    <p>Mestre em culinária italiana</p>
+                </div>
+            </div>
+        <!--          -->
+            <div class="funcionarios">
+                <div class="funcionario_individual">
+                    <img class="funcionarios_foto" src="{static % 'imagens/lucasfernandes.jpeg' %}" alt="">
+                    <h4>Lucas Fernandes</h4>
+                    <h6>Chef de Partie - Massas</h6>
+                    <p>Especialista em massas</p>
+                </div>
+                <div class="funcionario_individual">
+                    <img class="funcionarios_foto" src="{static % 'imagens/julianarocha.jpeg' %}" alt="">
+                    <h4>Juliana Rocha</h4>
+                    <h6>Chef de Partie - Sobremesas</h6>
+                    <p>Especialista em sobremesas</p>
+                </div>
+            </div>
+            <!--      -->
+            <div class="funcionarios">
+                <div class="funcionario_individual">
+                    <img class="funcionarios_foto" src="{static % 'imagens/andremartins.jpeg' %}" alt="">
+                    <h4>André Martins</h4>
+                    <h6>Sommelier</h6>
+                    <p>Sommelier de vinhos</p>
+                </div>
+                <div class="funcionario_individual">
+                    <img class="funcionarios_foto" src="{static % 'imagens/beatriznunes.jpeg' %}" alt="">
+                    <h4>Beatriz Nunes</h4>
+                    <h6>Garçonete</h6>
+                    <p>Garçonete experiente com cuidado ao cliente</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="secao_servicos">
+            <h1>Nossos serviços</h1>
+            <div class="nossos_servicos">
+                <div class="nossos_servicos_individual">
+                    <img src="{static % 'imagens/Group 566.png' %}" alt="">
+                    <p>Chef's em casa</p>
+                </div>
+                <div class="nossos_servicos_individual">
+                    <img src="{static % 'imagens/Group 582.png' %}" alt="">
+                    <p>Vinhos especializados</p>
+                </div>
+                <div class="nossos_servicos_individual">
+                    <img src="{static % 'imagens/Group 584.png' %}" alt="">
+                    <p>Treinamento de Chef's</p>
+                </div>
+            </div>
+        </section>
     </main>
-
-
 
     <footer>
         <div id="footer_logo">
-            <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+            <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
         </div>
         <div id="footer_completo">
             <div id="footer_contato">
                 <p>Contato</p>
-                <ul>
-                    <li>
-                        <div id="footer_celular">
-                            <img src="{% static 'imagens/Ícone Telefone.png' %}" alt="Imagem de um celular">
-                            <p>(11) 92234-5678</p>
-                        </div>
-                    <li>
-                        <div id="footer_email">
-                            <img src="{% static 'imagens/ÍCONE Email.png' %}" alt="Imagem de uma carta">
-                            <p>RestauranteApollo@gmail.com</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div id="footer_endereco">
-                            <img src="{% static 'imagens/Ícone localização.png' %}" alt="Imagem de uma ponteiro">
-                            <p>Avenida Roberto Freire, 123 - Natal/RN</p>
-                        </div>
-                    </li>
-                </ul>
+                <div id="footer_celular">
+                    <img src="{static % 'imagens/Ícone Telefone.png' %}" alt="Imagem de um celular" width="20px" height="20px">
+                    <p>(11) 92234-5678</p>
+                </div>
+                
+                <div id="footer_email">
+                    <img src="{static % 'imagens/ÍCONE Email.png' %}" alt="Imagem de uma carta">
+                    <p>RestauranteApollo@gmail.com</p>
+                </div>
+                <div id="footer_endereco">
+                    <img src="{static % 'imagens/Ícone localização.png' %}" alt="Imagem de uma ponteiro">
+                    <p>Avenida Roberto Freire, 123 - Natal/RN</p>
+                </div>
             </div>
 
             <div id="footer_horario">
                 <p>Horário de Funcionamento</p>
-                <ul>
-                    <li>Segunda a sexta: 13h - 22h</li>
-                    <li>Sábado e domingo: 12h - 22h</li>
-                    <li>Feriados: 12h - 22h</li>
-                </ul>
+                <div>
+                    <p>Segunda a sexta: 13h - 22h</p>
+                    <p>Sábado e domingo: 12h - 22h</p>
+                    <p>Feriados: 12h - 22h</p>
+                </div>
             </div>
 
             <div id="footer_redes_sociais">
                 <p>Redes Sociais</p>
-                <ul id="icones">
-                    <li><img src="{% static 'imagens/Ícone facebook.png' %}" alt=""></li>
-                    <li><img src="{% static 'imagens/Ícone instagram.png' %}" alt=""></li>
-                    <li><img src="{% static 'imagens/Ícone Twitter.png' %}" alt=""></li>
-                </ul>
+                <div id="icones">
+                    <img src="{static % 'imagens/Ícone facebook.png' %}" alt="">
+                    <img src="{static % 'imagens/Ícone instagram.png' %}" alt="">
+                    <img src="{static % 'imagens/Ícone Twitter.png' %}" alt="">
+                </div>
+                    
             </div>
-            <img src="{% static 'imagens/loc.png' %}" alt="Foto de mapa">
+            <img src="imagens/loc.png" alt="Foto de mapa">
         </div>
         <hr class="linha_curta">
         <div class="EJECT">
             <p class="EJECT_texto">MISSÃO EJECT</p>
-            <img src="{% static 'imagens/LOGO EJECT.png' %}" alt="">
+            <img src="imagens/LOGO EJECT.png" alt="">
         </div>
     </footer>
+
+    <script src="{% static 'script/index.js' %}"></script>
+
 </body>
 </html>

@@ -1,59 +1,60 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <link rel="stylesheet" href="{% static 'css/header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{static % 'css/index.css' %}">
+    <link rel="stylesheet" href="{static % 'css/header.css' %}">
+    <link rel="stylesheet" href="{static % 'css/footer.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
     <title>Restaurante Apollo - Squad 02</title>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Foto da logo">
+            <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Foto da logo">
         </div> 
         <nav>       
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Sobre nós</a></li>
+                <li><a href="{% url 'index.html' %}">Home</a></li>
+                <li><a href="{% url 'blog.html' %}">Blog</a></li>
+                <li><a href="{% url 'sobre_nos.html' %}">Sobre nós</a></li>
             </ul>           
         </nav>
         <div>
-            <button id="button-header"><a href="#">Fazer reserva</a></button>
+            <button class="abrir-modal" data-modal="reservaModal">Fazer reserva</button>
         </div>
     </header>
+
     <main id="main_home">
-        <!-- banner -->
         <section id="secao_banner_home">
             <div class="texto_banner_home">
                 <h1>Restaurante do <span id="apollo">Apollo</span></h1>
                 <h2>Uma experiência gastronômica inesquecível</h2>
-                <button><a href="#">Fazer reserva</a></button>
+                <button class="abrir-modal" data-modal="reservaModal">Fazer reserva</button>
             </div>           
         </section>
 
-        <dialog>
-            <img src="imagens/LOGO Apollo.png" alt="Logo do Restaurante Apollo">
-            <h2>Faça sua reserva</h2>
-
+        <dialog id="reservaModal" class="reserva">
+            <button class="fechar-modal fechar-reserva" type="button">✕</button>
+            <div>
+                 <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+                <h2>Faça sua reserva</h2>
+            </div>
             <form action="#">
-                <p>
+                <div class="info_formulario">
                     <label for="idNome">Nome completo</label>
-                    <input type="text" name="nome" id="idNome">
-                </p>
-                <p>
+                    <input placeholder="Digite seu nome" name="nome" id="idNome">
+                </div>
+                <div class="info_formulario">
                     <label for="idData">Data</label>
                     <input type="date" name="data" id="idData">
-                </p>
-                <p>
+                </div>
+                <div class="info_formulario">
                     <label for="idHorario">Horário</label>
                     <input type="time" name="horario" id="idHorario">
-                </p>
-                <p>
+                </div>
+                <div class="info_formulario">
                     <label for="idPessoas">Quantidade de pessoas</label>
                     <select name="seletorPessoas" id="idPessoas">
                         <option value="" selected></option>
@@ -64,8 +65,8 @@
                         <option value="05P">Cinco pessoas</option>
                         <option value="06P">Seis pessoas</option>
                     </select>
-                </p>
-                <button>CONFIRMAR RESERVA</button>
+                </div>
+                <button type="submit" class="butao_reserva">CONFIRMAR RESERVA</button>
             </form> 
         </dialog>
 
@@ -73,64 +74,62 @@
             <h1>Destaques</h1>
             <div id="div_destaques">
                 <div id="div_destaques_chefs">
-                    <img src="{% static 'imagens/chefs.png' %}" alt="Imagem de um chapéu de cozinheiro - Toque Blanche">
+                    <img src="{static % 'imagens/chefs' %}" alt="Imagem de um chapéu de cozinheiro - Toque Blanche">
                     <h5>Chef's capacitados</h5>
                     <p>Nossa equipe de chefs especializados cria pratos únicos com técnicas refinadas.</p>
                 </div>
                 <div id="div_destaques_vantagens_local">
-                    <img src="{% static 'imagens/vantagens.png' %}" alt="Imagem de uma garfo e uma faca cruzados">
+                    <img src="{static % 'imagens/vantagens.png' %}" alt="Imagem de uma garfo e uma faca cruzados">
                     <h5>Vantagens do local</h5>
-                    <p>Bem localizado e altamente confortável, aconchegante para você e sua família.</p>
+                    <p>Bem localizado e altamente confotável, aconchegante para você a sua família.</p>
                 </div>
                 <div id="div_destaques_premiacoes">
-                    <img src="{% static 'imagens/premios.png' %}" alt="Imagem de uma medalha">
+                    <img src="{static % 'imagens/premios.png' %}" alt="Imagem de uma medalha">
                     <h5>Premiações</h5>
                     <p>Reconhecido por diversas revistas gastronômicas e críticos renomados.</p>
                 </div>
                 <div id="div_destaques_horarios">
-                    <img src="{% static 'imagens/horarios.png' %}" alt="Imagem de um relógio">
+                    <img src="{static % 'imagens/horarios.png' %}" alt="Imagem de um relógio">
                     <h5>Horários</h5>
-                    <p>Aberto todos os dias com horários estendidos. De 13h às 22h.</p>
+                    <p>Aberto todos os dias com horários estendidos. De 13h ás 22h.</p>
                 </div>
             </div>
         </section>
 
-        <!-- experiência -->
         <section id="secao_experiencia">
             <div id="div_venha_nos_conhecer_titulo_texto">
                 <h3>Venha conhecer a gente</h3>
                 <div id="div_venha_nos_conhecer_texto">
-                    <p><b>Aproveite a oportunidade!</b></p>
-                    <p>Utilize nossos 20% de desconto para ter sua melhor experiência</p>
+                    <p> <b>Aproveite a oportunidade!</b> </p>
+                    <p>Utilize o nossos 20% de desconto para você ter sua melhor experiência </p>
                 </div>
                 <div id="div_experiencia">
                     <p>SUA MELHOR EXPERIÊNCIA GASTRONÔMICA</p>
+                    <!-- ADICIONAR ESTRELAS -->
                 </div>
             </div>
             <div id="div_secao_experiencia_fotos">
                 <div>
-                    <img src="{% static 'imagens/foto_direita_cima.png' %}" alt="Foto de um prato do Restaurante">
-                    <img src="{% static 'imagens/foto_direita_baixo.png' %}" alt="Foto de um prato do Restaurante">
+                    <img src="{static % 'imagens/foto_direita_cima.png' %}" alt="Foto de um prato do Restaurante">
+                    <img src="{static % 'imagens/foto_direita_baixo.png' %}" alt="Foto de um prato do Restaurante">
                 </div>
-                <img src="{% static 'imagens/foto_esquerda.png' %}" alt="Foto de um prato do Restaurante" id="foto_esquerda">
+                <img src="{static % 'imagens/foto_esquerda.png' %}" alt="Foto de um prato do Restaurante" id="foto_esquerda">
             </div>
         </section>
 
-        <!-- nosso espaço -->
         <section id="nosso_espaco">
             <h1>Nosso Espaço</h1>
+            <!-- Swiper -->
             <div class="swiper mySwiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="{% static 'imagens/img1.png' %}" alt="Fotos do ambiente"></div>
-                <div class="swiper-slide"><img src="{% static 'imagens/img2.png' %}" alt="Fotos do ambiente"></div>
-                <div class="swiper-slide"><img src="{% static 'imagens/img3.png' %}" alt="Fotos do ambiente"></div>
-                <div class="swiper-slide"><img src="{% static 'imagens/img4.png' %}" alt="Fotos do ambiente"></div>
+                <div class="swiper-slide"><img src="{static % 'imagens/img1.png' %}" alt="Fotos do ambiente"></div>
+                <div class="swiper-slide"><img src="{static % 'imagens/img2.png' %}" alt="Fotos do ambiente"></div>
+                <div class="swiper-slide"><img src="{static % 'imagens/img3.png' %}" alt="Fotos do ambiente"></div>
+                <div class="swiper-slide"><img src="{static % 'imagens/img4.png' %}" alt="Fotos do ambiente"></div>
               </div>
             </div>
         </section>
             
-
-            <!-- Parte do JS -->
             <!-- Swiper JS -->
             <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
@@ -138,63 +137,58 @@
             <script>
               var swiper = new Swiper(".mySwiper", {});
             </script>
-            <!-- TERMINO DO JS -->
 
     </main>
-
     <footer>
         <div id="footer_logo">
-            <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+            <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
         </div>
         <div id="footer_completo">
             <div id="footer_contato">
                 <p>Contato</p>
-                <ul>
-                    <li>
-                        <div id="footer_celular">
-                            <img src="{% static 'imagens/Ícone Telefone.png' %}" alt="Imagem de um celular">
-                            <p>(11) 92234-5678</p>
-                        </div>
-                    <li>
-                        <div id="footer_email">
-                            <img src="{% static 'imagens/ÍCONE Email.png' %}" alt="Imagem de uma carta">
-                            <p>RestauranteApollo@gmail.com</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div id="footer_endereco">
-                            <img src="{% static 'imagens/Ícone localização.png' %}" alt="Imagem de uma ponteiro">
-                            <p>Avenida Roberto Freire, 123 - Natal/RN</p>
-                        </div>
-                    </li>
-                </ul>
+                <div id="footer_celular">
+                    <img src="{static % 'imagens/Ícone Telefone.png' %}" alt="Imagem de um celular" width="20px" height="20px">
+                    <p>(11) 92234-5678</p>
+                </div>
+                
+                <div id="footer_email">
+                    <img src="{static % 'imagens/ÍCONE Email.png' %}" alt="Imagem de uma carta">
+                    <p>RestauranteApollo@gmail.com</p>
+                </div>
+                <div id="footer_endereco">
+                    <img src="{static % 'imagens/Ícone localização.png' %}" alt="Imagem de uma ponteiro">
+                    <p>Avenida Roberto Freire, 123 - Natal/RN</p>
+                </div>
             </div>
 
             <div id="footer_horario">
                 <p>Horário de Funcionamento</p>
-                <ul>
-                    <li>Segunda a sexta: 13h - 22h</li>
-                    <li>Sábado e domingo: 12h - 22h</li>
-                    <li>Feriados: 12h - 22h</li>
-                </ul>
+                <div>
+                    <p>Segunda a sexta: 13h - 22h</p>
+                    <p>Sábado e domingo: 12h - 22h</p>
+                    <p>Feriados: 12h - 22h</p>
+                </div>
             </div>
 
             <div id="footer_redes_sociais">
                 <p>Redes Sociais</p>
-                <ul id="icones">
-                    <li><img src="{% static 'imagens/Ícone facebook.png' %}" alt=""></li>
-                    <li><img src="{% static 'imagens/Ícone instagram.png' %}" alt=""></li>
-                    <li><img src="{% static 'imagens/Ícone Twitter.png' %}" alt=""></li>
-                </ul>
+                <div id="icones">
+                    <img src="{static % 'imagens/Ícone facebook.png' %}" alt="">
+                    <img src="{static % 'imagens/Ícone instagram.png' %}" alt="">
+                    <img src="{static % 'imagens/Ícone Twitter.png' %}" alt="">
+                </div>
+                    
             </div>
-            <img src="{% static 'imagens/loc.png' %}" alt="Foto de mapa">
+            <img src="imagens/loc.png" alt="Foto de mapa">
         </div>
         <hr class="linha_curta">
         <div class="EJECT">
             <p class="EJECT_texto">MISSÃO EJECT</p>
-            <img src="{% static 'imagens/LOGO EJECT.png' %}" alt="">
+            <img src="imagens/LOGO EJECT.png" alt="">
         </div>
     </footer>
+
+    <script src="{% static 'script/index.js' %}"></script>
 
 </body>
 </html>
