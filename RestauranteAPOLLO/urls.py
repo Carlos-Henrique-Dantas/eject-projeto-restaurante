@@ -3,14 +3,18 @@ from .views import ReservaCreateView, ReservaListView, ReservaCancelView, Reserv
 from . import views
 from .views import PostListView, PostDetailView
 
-
 urlpatterns = [
     path('reservas/nova/', ReservaCreateView.as_view(), name='nova_reserva'),
     path('reservas/', ReservaListView.as_view(), name='minhas_reservas'),
     path('reservas/<int:pk>/cancelar/', ReservaCancelView.as_view(), name='cancelar_reserva'),
     path('reservas/<int:pk>/deletar/', ReservaDeleteView.as_view(), name='deletar_reserva'),
+    
+    # Caminho da página inicial
     path('', views.home, name='home'),
-    path('', PostListView.as_view(), name='blog'),
-    path('', PostListView.as_view(), name='sobre_nos'),
+    
+    # Caminho do blog corrigido (agora acessado por /blog/)
+    path('blog/', PostListView.as_view(), name='blog'),
+    
+    # Caminho dos detalhes do post
     path('blog/<int:pk>/', PostDetailView.as_view(), name='post_detalhe'),
 ]
