@@ -1,24 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{static % 'css/index.css' %}">
-    <link rel="stylesheet" href="{static % 'css/header.css' %}">
-    <link rel="stylesheet" href="{static % 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
     <title>Restaurante Apollo - Squad 02</title>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Foto da logo">
+            <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Foto da logo">
         </div> 
         <nav>       
             <ul>
-                <li><a href="{% url 'index.html' %}">Home</a></li>
-                <li><a href="{% url 'blog.html' %}">Blog</a></li>
-                <li><a href="{% url 'sobre_nos.html' %}">Sobre nós</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="{% url 'sobre_nos' %}">Sobre nós</a></li>
             </ul>           
         </nav>
         <div>
@@ -38,7 +39,7 @@
         <dialog id="reservaModal" class="reserva">
             <button class="fechar-modal fechar-reserva" type="button">✕</button>
             <div>
-                 <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+                 <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
                 <h2>Faça sua reserva</h2>
             </div>
             <form action="#">
@@ -74,22 +75,22 @@
             <h1>Destaques</h1>
             <div id="div_destaques">
                 <div id="div_destaques_chefs">
-                    <img src="{static % 'imagens/chefs' %}" alt="Imagem de um chapéu de cozinheiro - Toque Blanche">
+                    <img src="{% static 'imagens/chefs' %}" alt="Imagem de um chapéu de cozinheiro - Toque Blanche">
                     <h5>Chef's capacitados</h5>
                     <p>Nossa equipe de chefs especializados cria pratos únicos com técnicas refinadas.</p>
                 </div>
                 <div id="div_destaques_vantagens_local">
-                    <img src="{static % 'imagens/vantagens.png' %}" alt="Imagem de uma garfo e uma faca cruzados">
+                    <img src="{% static 'imagens/vantagens.png' %}" alt="Imagem de uma garfo e uma faca cruzados">
                     <h5>Vantagens do local</h5>
                     <p>Bem localizado e altamente confotável, aconchegante para você a sua família.</p>
                 </div>
                 <div id="div_destaques_premiacoes">
-                    <img src="{static % 'imagens/premios.png' %}" alt="Imagem de uma medalha">
+                    <img src="{% static 'imagens/premios.png' %}" alt="Imagem de uma medalha">
                     <h5>Premiações</h5>
                     <p>Reconhecido por diversas revistas gastronômicas e críticos renomados.</p>
                 </div>
                 <div id="div_destaques_horarios">
-                    <img src="{static % 'imagens/horarios.png' %}" alt="Imagem de um relógio">
+                    <img src="{% static 'imagens/horarios.png' %}" alt="Imagem de um relógio">
                     <h5>Horários</h5>
                     <p>Aberto todos os dias com horários estendidos. De 13h ás 22h.</p>
                 </div>
@@ -110,10 +111,10 @@
             </div>
             <div id="div_secao_experiencia_fotos">
                 <div>
-                    <img src="{static % 'imagens/foto_direita_cima.png' %}" alt="Foto de um prato do Restaurante">
-                    <img src="{static % 'imagens/foto_direita_baixo.png' %}" alt="Foto de um prato do Restaurante">
+                    <img src="{% static 'imagens/foto_direita_cima.png' %}" alt="Foto de um prato do Restaurante">
+                    <img src="{% static 'imagens/foto_direita_baixo.png' %}" alt="Foto de um prato do Restaurante">
                 </div>
-                <img src="{static % 'imagens/foto_esquerda.png' %}" alt="Foto de um prato do Restaurante" id="foto_esquerda">
+                <img src="{% static 'imagens/foto_esquerda.png' %}" alt="Foto de um prato do Restaurante" id="foto_esquerda">
             </div>
         </section>
 
@@ -122,10 +123,10 @@
             <!-- Swiper -->
             <div class="swiper mySwiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="{static % 'imagens/img1.png' %}" alt="Fotos do ambiente"></div>
-                <div class="swiper-slide"><img src="{static % 'imagens/img2.png' %}" alt="Fotos do ambiente"></div>
-                <div class="swiper-slide"><img src="{static % 'imagens/img3.png' %}" alt="Fotos do ambiente"></div>
-                <div class="swiper-slide"><img src="{static % 'imagens/img4.png' %}" alt="Fotos do ambiente"></div>
+                <div class="swiper-slide"><img src="{% static 'imagens/img1.png' %}" alt="Fotos do ambiente"></div>
+                <div class="swiper-slide"><img src="{% static 'imagens/img2.png' %}" alt="Fotos do ambiente"></div>
+                <div class="swiper-slide"><img src="{% static 'imagens/img3.png' %}" alt="Fotos do ambiente"></div>
+                <div class="swiper-slide"><img src="{% static 'imagens/img4.png' %}" alt="Fotos do ambiente"></div>
               </div>
             </div>
         </section>
@@ -141,22 +142,22 @@
     </main>
     <footer>
         <div id="footer_logo">
-            <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+            <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
         </div>
         <div id="footer_completo">
             <div id="footer_contato">
                 <p>Contato</p>
                 <div id="footer_celular">
-                    <img src="{static % 'imagens/Ícone Telefone.png' %}" alt="Imagem de um celular" width="20px" height="20px">
+                    <img src="{% static 'imagens/Ícone Telefone.png' %}" alt="Imagem de um celular" width="20px" height="20px">
                     <p>(11) 92234-5678</p>
                 </div>
                 
                 <div id="footer_email">
-                    <img src="{static % 'imagens/ÍCONE Email.png' %}" alt="Imagem de uma carta">
+                    <img src="{% static 'imagens/ÍCONE Email.png' %}" alt="Imagem de uma carta">
                     <p>RestauranteApollo@gmail.com</p>
                 </div>
                 <div id="footer_endereco">
-                    <img src="{static % 'imagens/Ícone localização.png' %}" alt="Imagem de uma ponteiro">
+                    <img src="{% static 'imagens/Ícone localização.png' %}" alt="Imagem de uma ponteiro">
                     <p>Avenida Roberto Freire, 123 - Natal/RN</p>
                 </div>
             </div>
@@ -173,18 +174,18 @@
             <div id="footer_redes_sociais">
                 <p>Redes Sociais</p>
                 <div id="icones">
-                    <img src="{static % 'imagens/Ícone facebook.png' %}" alt="">
-                    <img src="{static % 'imagens/Ícone instagram.png' %}" alt="">
-                    <img src="{static % 'imagens/Ícone Twitter.png' %}" alt="">
+                    <img src="{% static 'imagens/Ícone facebook.png' %}" alt="">
+                    <img src="{% static 'imagens/Ícone instagram.png' %}" alt="">
+                    <img src="{% static 'imagens/Ícone Twitter.png' %}" alt="">
                 </div>
                     
             </div>
-            <img src="imagens/loc.png" alt="Foto de mapa">
+            <img src="{% static 'imagens/loc.png' %}" alt="Foto de mapa">
         </div>
         <hr class="linha_curta">
         <div class="EJECT">
             <p class="EJECT_texto">MISSÃO EJECT</p>
-            <img src="imagens/LOGO EJECT.png" alt="">
+            <img src="{% static 'imagens/LOGO EJECT.png' %}" alt="Logo">
         </div>
     </footer>
 
