@@ -305,55 +305,6 @@ dialog{
 }
 
 
-.noticia_blog{
-    width: 480px;
-    height: 460px;
-    box-shadow: 0px 8px 10px -6px rgba(0,0,0,0.5);
-}
-.noticia_blog img{
-    max-width: 480px;
-    max-height: 192px;
-}
-.noticia_blog p{
-    color: #525252;
-}
-.data_blog{
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-
-.data_blog p{
-    color: #737373;
-    font-size: medium;
-}
-.secao_blog{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 50px;
-    margin-top: 80px;
-}
-.texto_blog{
-    margin: 0 25px;
-}
-.texto_blog h3{
-    margin-top: 0;
-}
-.titulo_blog{
-    margin: 0;
-}
-
-.butao_blog{
-    background-color: #E17100;
-    color: white;
-    font-size: 18px;
-    width: 100px;
-    height: 30px;
-    margin-top: 20px;
-
-}
 .contener{
     display: flex;
     justify-content: center;
@@ -421,25 +372,7 @@ dialog form div{
     font-size: small;
     font-weight: bold;
 }
-.titulo_blog_completo{
-    color: #E17100;
-}
-.creditosBlog{
-    display: flex;
-    gap: 10px;
-    padding-top: 0;
-    padding-bottom: 2em;
-}
-.creditosBlog span{
-    color: #737373;
-    font-size: small;
-}
-.fechar_blog{
-    position: relative;
-}
-.texto_completo_blog{
-    display: flex;
-}
+
 .conteudoArtigo{
     width: 80%;
    
@@ -626,35 +559,7 @@ hr{
     width: 200px;
     height: 190px;
   }
-  .noticia_blog{
-    width: 400px;
-    height: 350px;
-  }
-  .noticia_blog img{
-    width: 400px;
-  }
-  .data_blog{
-    gap: 3px;
-  }
-  .data_blog p{
-    row-gap: 0;
-    font-size: 10px;
-  }
-  .data_blog img{
-    width: 10px;
-  }
-  .titulo_blog{
-    font-size: medium;
-  }
-  .previa_blog{
-    font-size: smaller;
-    margin: 0;
-  }
-  .butao_blog{
-    font-size: x-small;
-    width: 70px;
-    height: 25px;
-  }
+
   .reserva{
     width: 350px;
     height: 500px;
@@ -696,35 +601,12 @@ hr{
     font-size: 1em;
    }
    
-   .creditosBlog img{
-    display: none;
-   }
-   .creditosBlog span {
-    font-size: small;
-   }
-   .creditosBlog{
-    column-gap: 4px;
-    padding-bottom: 0;
-   }
-   .imagemBlog img{
-    width: 315px;
-   }
-   .imagemBlog p{
-    margin: 0;
-   }
    article{
     font-size: small;
    }
    aside{
     display: none;
    }
-   .fechar-modal.fechar-blog{
-    font-size: x-small;
-    width: 90px;
-    height: 20px;
-   }
-
 
 }
-
 

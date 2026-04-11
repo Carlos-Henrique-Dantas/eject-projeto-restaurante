@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.titulo }} - Apollo</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <style>
+        .conteudo-post { max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.8; }
+        .img-detalhe { width: 100%; height: 400px; object-fit: cover; border-radius: 10px; }
+        .btn-voltar { display: inline-block; margin-top: 20px; color: #E17100; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        </header>
+
+    <main class="conteudo-post">
+        <a href="{% url 'blog' %}" class="btn-voltar">← Voltar para o Blog</a>
+        
+        <h1>{{ post.titulo }}</h1>
+        <p style="color: #888;">Publicado em {{ post.publicado_em|date:"d/m/Y" }} por {{ post.autor }}</p>
+        <hr>
+
+        {% if post.imagem %}
+            <img src="{{ post.imagem.url }}" class="img-detalhe">
+        {% endif %}
+
+        <div style="margin-top: 30px; font-size: 1.2em;">
+            {{ post.conteudo|linebreaks }}
+        </div>
+    </main>
+
+    </body>
+</html>

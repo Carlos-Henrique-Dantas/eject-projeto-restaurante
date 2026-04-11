@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
-    <title>Restaurante Apollo - Squad 02</title>
+    <title>Blog - Restaurante Apollo</title>
 </head>
 <body>
     <header>
@@ -19,7 +20,7 @@
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'blog' %}">Blog</a></li>
-                <li><a href="{% url 'sobre_nos' %}">Sobre nós</a></li>
+                <li><a href="#">Sobre nós</a></li>
             </ul>           
         </nav>
         <div>
@@ -28,68 +29,62 @@
     </header>
 
     <main id="main_blog">
-
-
         <dialog id="reservaModal" class="reserva">
             <button class="fechar-modal fechar-reserva" type="button">✕</button>
             <div>
-                 <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+                 <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
                 <h2>Faça sua reserva</h2>
             </div>
-            <form action="#">
+            <form action="{% url 'nova_reserva' %}" method="POST" id="formReserva">
+                {% csrf_token %}
                 <div class="info_formulario">
                     <label for="idNome">Nome completo</label>
-                    <input placeholder="Digite seu nome" name="nome" id="idNome">
+                    <input placeholder="Digite seu nome" name="nome" id="idNome" required>
                 </div>
                 <div class="info_formulario">
                     <label for="idData">Data</label>
-                    <input type="date" name="data" id="idData">
+                    <input type="date" name="data" id="idData" required>
                 </div>
                 <div class="info_formulario">
                     <label for="idHorario">Horário</label>
-                    <input type="time" name="horario" id="idHorario">
+                    <input type="time" name="horario" id="idHorario" required>
                 </div>
                 <div class="info_formulario">
                     <label for="idPessoas">Quantidade de pessoas</label>
-                    <select name="seletorPessoas" id="idPessoas">
-                        <option value="" selected></option>
-                        <option value="01P">Uma pessoa</option>
-                        <option value="02P">Duas pessoas</option>
-                        <option value="03P">Três pessoas</option>
-                        <option value="04P">Quatro pessoas</option>
-                        <option value="05P">Cinco pessoas</option>
-                        <option value="06P">Seis pessoas</option>
+                    <select name="num_pessoas" id="idPessoas" required>
+                        <option value="" selected disabled>Selecione</option>
+                        <option value="1">Uma pessoa</option>
+                        <option value="2">Duas pessoas</option>
+                        <option value="3">Três pessoas</option>
+                        <option value="4">Quatro pessoas</option>
+                        <option value="5">Cinco pessoas</option>
+                        <option value="6">Seis pessoas</option>
                     </select>
                 </div>
                 <button type="submit" class="butao_reserva">CONFIRMAR RESERVA</button>
             </form> 
         </dialog>
 
-
         <section id="secao_blog">
             <h1 class="titulo_pagina_blog">Nosso Blog</h1>
             <p class="subtitulo_blog">Descubra a história fascinante por trás dos ingredientes e pratos que amamos</p>
 
             <div id="container_blog">
-                
-                {% for post in object_list %}
+                {% for post in posts %}
                 <div class="noticia_blog">
-                    
                     {% if post.imagem %}
-                        <img src="{{ post.imagem.url }}" alt="{{ post.titulo }}">
+                        <img class="img_post" src="{{ post.imagem.url }}" alt="{{ post.titulo }}">
                     {% else %}
-                        <img src="{% static 'imagens/foto_direita_cima.png' %}" alt="Imagem Padrão">
+                        <img class="img_post" src="{% static 'imagens/foto_direita_cima.png' %}" alt="Imagem Padrão">
                     {% endif %}
                     
                     <div class="data_blog">
-                        <img src="imagens/Icon.png" alt="">
-                        <span class="data_post">{{ post.publicado_em|date:"d M, Y" }} • Por {{ post.autor }}</span>
-                        
+                        <div class="cabecalho_post">
+                            <span class="data_post">{{ post.publicado_em|date:"d M, Y" }} • Por {{ post.autor }}</span>
+                        </div>
                         <h3 class="titulo_blog">{{ post.titulo }}</h3>
-                        
                         <p class="previa_blog">{{ post.conteudo|truncatechars:120 }}</p>
-                        
-                        <button class="lermaisBlog" data-modal="blogModal1">Ler mais</button>
+                        <a href="{% url 'post_detalhe' post.pk %}" class="lermaisBlog">Ler mais</a>
                     </div>
                 </div>
                 {% empty %}
@@ -97,57 +92,27 @@
                         <p>Nenhuma postagem publicada no momento. Volte em breve!</p>
                     </div>
                 {% endfor %}
-                </div>
-        </section>
-
-        <dialog id="blogModal1" class="artigoBlog">
-            <div class="conteudoArtigo">
-                <div>
-                    <h1 class="titulo_blog_completo">{{ post.titulo }}</h1>
-                    <hr>
-                    <div class="creditosBlog">
-                        <img src="#" alt="">
-                        <span class="data_post">{{ post.publicado_em|date:"d M, Y" }} • Por {{ post.autor }}</span> 
-                    </div>
-                </div>
-                <div class="imagemBlog">
-                    {% if post.imagem %}
-                        <img src="{{ post.imagem.url }}" alt="{{ post.titulo }}">
-                    {% else %}
-                        <img src="{% static 'imagens/foto_direita_cima.png' %}" alt="Imagem Padrão">
-                    {% endif %}
-                    <p>legenda</p>
-                </div>
-                <div class="texto_completo_blog">
-                    <article>{{ post.conteudo }}</article>
-                    <!--PARTE OPICIONAL-->
-                    <aside>imagem</aside>
-                </div>
-                <button class="fechar-modal fechar-blog">Voltar ao blog</button>
             </div>
-        </dialog>
-
-
+        </section>
     </main>
 
     <footer>
         <div id="footer_logo">
-            <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+            <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
         </div>
         <div id="footer_completo">
             <div id="footer_contato">
                 <p>Contato</p>
                 <div id="footer_celular">
-                    <img src="{static % 'imagens/Ícone Telefone.png' %}" alt="Imagem de um celular" width="20px" height="20px">
+                    <img src="{% static 'imagens/Ícone Telefone.png' %}" alt="Imagem de um celular" width="20px" height="20px">
                     <p>(11) 92234-5678</p>
                 </div>
-                
                 <div id="footer_email">
-                    <img src="{static % 'imagens/ÍCONE Email.png' %}" alt="Imagem de uma carta">
+                    <img src="{% static 'imagens/ÍCONE Email.png' %}" alt="Imagem de uma carta">
                     <p>RestauranteApollo@gmail.com</p>
                 </div>
                 <div id="footer_endereco">
-                    <img src="{static % 'imagens/Ícone localização.png' %}" alt="Imagem de uma ponteiro">
+                    <img src="{% static 'imagens/Ícone localização.png' %}" alt="Imagem de uma ponteiro">
                     <p>Avenida Roberto Freire, 123 - Natal/RN</p>
                 </div>
             </div>
@@ -164,22 +129,42 @@
             <div id="footer_redes_sociais">
                 <p>Redes Sociais</p>
                 <div id="icones">
-                    <img src="{static % 'imagens/Ícone facebook.png' %}" alt="">
-                    <img src="{static % 'imagens/Ícone instagram.png' %}" alt="">
-                    <img src="{static % 'imagens/Ícone Twitter.png' %}" alt="">
+                    <img src="{% static 'imagens/Ícone facebook.png' %}" alt="">
+                    <img src="{% static 'imagens/Ícone instagram.png' %}" alt="">
+                    <img src="{% static 'imagens/Ícone Twitter.png' %}" alt="">
                 </div>
-                    
             </div>
-            <img src="imagens/loc.png" alt="Foto de mapa">
+            <img src="{% static 'imagens/loc.png' %}" alt="Foto de mapa">
         </div>
         <hr class="linha_curta">
         <div class="EJECT">
             <p class="EJECT_texto">MISSÃO EJECT</p>
-            <img src="imagens/LOGO EJECT.png" alt="">
+            <img src="{% static 'imagens/LOGO EJECT.png' %}" alt="Logo">
         </div>
     </footer>
 
     <script src="{% static 'script/index.js' %}"></script>
+    <script>
+        const formReserva = document.getElementById('formReserva');
+        const modalReserva = document.getElementById('reservaModal');
 
+        if (formReserva) {
+            formReserva.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const formData = new FormData(formReserva);
+                fetch(formReserva.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                })
+                .then(response => {
+                    modalReserva.close();
+                    formReserva.reset(); 
+                    alert("Sua reserva foi confirmada com sucesso! Te esperamos no Apollo.");
+                })
+                .catch(error => alert("Ops! Ocorreu um erro ao enviar a reserva."));
+            });
+        }
+    </script>
 </body>
 </html>
