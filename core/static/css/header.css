@@ -1,44 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
 }
 
-header{
+header {
     background-color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    padding-left: 6em;
-    padding-right: 6em;
-    box-shadow: 0px 8px 10px -6px rgba(0,0,0,0.5);
+    padding: 15px 6em; 
+    box-shadow: 0px 8px 10px -6px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-nav ul{
+
+.logo img {
+    max-height: 55px;
+    width: auto;
+}
+
+nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 35px;
     margin: 0;
     padding: 0;
-    color: black;
-    position: relative;
-    left: 19em;
 }
-nav li{
-    color: black;
-    font-size: medium;
+nav li {
+    font-size: 1.05rem;
     font-weight: 600;
 }
-nav a:hover{
-    color: #E17100;
-}
-nav a{
+nav a {
     text-decoration: none;
     color: black;
+    transition: color 0.3s;
 }
-.logo img{
-    max-height: 50px;
-    width: auto;
+nav a:hover {
+    color: #E17100;
+}
+header button {
+    background-color: #E17100;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+header button:hover {
+    background-color: #c15a00;
+    transform: translateY(-2px);
 }
