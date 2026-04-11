@@ -11,10 +11,7 @@ urlpatterns = [
     
     # Caminho da página inicial
     path('', views.home, name='home'),
-    
-    # Caminho do blog corrigido (agora acessado por /blog/)
     path('blog/', PostListView.as_view(), name='blog'),
-    
-    # Caminho dos detalhes do post
+    path('sobre-nos/', views.Sobre_nos, name='sobre_nos'),
     path('blog/<int:pk>/', PostDetailView.as_view(), name='post_detalhe'),
 ]

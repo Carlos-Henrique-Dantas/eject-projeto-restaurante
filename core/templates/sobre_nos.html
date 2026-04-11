@@ -16,9 +16,9 @@
         </div> 
         <nav>       
             <ul>
-                <li><a href="{% url 'index.html' %}">Home</a></li>
-                <li><a href="{% url 'blog.html' %}">Blog</a></li>
-                <li><a href="{% url 'sobre_nos.html' %}">Sobre nós</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="{% url 'sobre_nos' %}">Sobre nós</a></li>
             </ul>           
         </nav>
         <div>
@@ -30,7 +30,7 @@
         <dialog id="reservaModal" class="reserva">
             <button class="fechar-modal fechar-reserva" type="button">✕</button>
             <div>
-                 <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+                 <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
                 <h2>Faça sua reserva</h2>
             </div>
             <form action="#">
@@ -78,8 +78,8 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quo, blanditiis dolorum ab adipisci commodi autem facilis aut illo non harum, vel quia quae, eius corporis fugiat veritatis earum unde! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium voluptatum minus beatae vitae amet quidem, minima libero soluta natus? Repudiandae voluptatem architecto laudantium tempore minima obcaecati repellendus inventore recusandae quaerat! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis, facere esse. Consequuntur laudantium magni quasi nemo dolores rem hic reprehenderit maxime. Sit praesentium non et. Quis pariatur magnam nemo eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati suscipit voluptates asperiores, veniam velit neque enim, recusandae quisquam rem iusto dicta maiores. Maxime quia incidunt enim repellat optio, tenetur animi. lorem</p>
                 </div>
                 <div class="nossa_historia_img">
-                    <img src="{static % 'imagens/Imagem nossa história 1.png' %}" alt="">
-                    <img src="{static % 'imagens/Imagem nossa história 2.png' %}" alt="">
+                    <img src="{% static 'imagens/Imagem nossa história 1.png' %}" alt="">
+                    <img src="{% static 'imagens/Imagem nossa história 2.png' %}" alt="">
                 </div>
             </div>
         </section>
@@ -87,7 +87,7 @@
         <dialog class="reserva">
             <button class="fechar-modal" type="button">✕</button>
             <div>
-                 <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+                 <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
                 <h2>Faça sua reserva</h2>
             </div>
             <form action="#">
@@ -123,17 +123,17 @@
             <h1>Missão, visão e valores</h1>
             <div class="missao_visao_valores_conjunto">
                 <div class="missao_visao_valores_individual">
-                    <img src="{static % 'imagens/Frame 34.png' %}" alt="">
+                    <img src="{% static 'imagens/Frame 34.png' %}" alt="">
                     <h5>Missão</h5>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus quo consectetur expedita r</p>
                 </div>
                 <div class="missao_visao_valores_individual">
-                    <img src="{static % 'imagens/ícone visão.png' %}" alt="">
+                    <img src="{% static 'imagens/ícone visão.png' %}" alt="">
                     <h5>Visão</h5>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus quo consectetur expedita r</p>
                 </div>
                 <div class="missao_visao_valores_individual">
-                    <img src="{static % 'imagens/ícone valores.png' %}" alt="">
+                    <img src="{% static 'imagens/ícone valores.png' %}" alt="">
                     <h5>Valores</h5>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus quo consectetur expedita r</p>
                 </div>
@@ -148,13 +148,13 @@
         
             <div class="funcionarios">
                 <div class="funcionario_individual">
-                    <img class="funcionarios_foto" src="{static % 'imagens/ricardoalmeida.jpeg' %}" alt="">
+                    <img class="funcionarios_foto" src="{% static 'imagens/ricardoalmeida.jpeg' %}" alt="">
                     <h4>Ricardo Almeida</h4>
                     <h6>Chefe executivo</h6>
                     <p>Mestre em culinária italiana com 20 anos de experiência</p>
                 </div>
                 <div class="funcionario_individual">
-                    <img class="funcionarios_foto" src="camiladuarte" alt="">
+                    <img class="funcionarios_foto" src="{% static 'imagens/camiladuarte.jpeg' %}" alt="">
                     <h4>Camila Duarte</h4>
                     <h6>Sous-Chef</h6>
                     <p>Mestre em culinária italiana</p>
@@ -163,13 +163,13 @@
         <!--          -->
             <div class="funcionarios">
                 <div class="funcionario_individual">
-                    <img class="funcionarios_foto" src="{static % 'imagens/lucasfernandes.jpeg' %}" alt="">
+                    <img class="funcionarios_foto" src="{% static 'imagens/lucasfernandes.jpeg' %}" alt="">
                     <h4>Lucas Fernandes</h4>
                     <h6>Chef de Partie - Massas</h6>
                     <p>Especialista em massas</p>
                 </div>
                 <div class="funcionario_individual">
-                    <img class="funcionarios_foto" src="{static % 'imagens/julianarocha.jpeg' %}" alt="">
+                    <img class="funcionarios_foto" src="{% static 'imagens/julianarocha.jpeg' %}" alt="">
                     <h4>Juliana Rocha</h4>
                     <h6>Chef de Partie - Sobremesas</h6>
                     <p>Especialista em sobremesas</p>
@@ -178,13 +178,13 @@
             <!--      -->
             <div class="funcionarios">
                 <div class="funcionario_individual">
-                    <img class="funcionarios_foto" src="{static % 'imagens/andremartins.jpeg' %}" alt="">
+                    <img class="funcionarios_foto" src="{% static 'imagens/andremartins.jpeg' %}" alt="">
                     <h4>André Martins</h4>
                     <h6>Sommelier</h6>
                     <p>Sommelier de vinhos</p>
                 </div>
                 <div class="funcionario_individual">
-                    <img class="funcionarios_foto" src="{static % 'imagens/beatriznunes.jpeg' %}" alt="">
+                    <img class="funcionarios_foto" src="{% static 'imagens/beatriznunes.jpeg' %}" alt="">
                     <h4>Beatriz Nunes</h4>
                     <h6>Garçonete</h6>
                     <p>Garçonete experiente com cuidado ao cliente</p>
@@ -196,15 +196,15 @@
             <h1>Nossos serviços</h1>
             <div class="nossos_servicos">
                 <div class="nossos_servicos_individual">
-                    <img src="{static % 'imagens/Group 566.png' %}" alt="">
+                    <img src="{% static 'imagens/Group 566.png' %}" alt="">
                     <p>Chef's em casa</p>
                 </div>
                 <div class="nossos_servicos_individual">
-                    <img src="{static % 'imagens/Group 582.png' %}" alt="">
+                    <img src="{% static 'imagens/Group 582.png' %}" alt="">
                     <p>Vinhos especializados</p>
                 </div>
                 <div class="nossos_servicos_individual">
-                    <img src="{static % 'imagens/Group 584.png' %}" alt="">
+                    <img src="{% static 'imagens/Group 584.png' %}" alt="">
                     <p>Treinamento de Chef's</p>
                 </div>
             </div>
@@ -213,22 +213,22 @@
 
     <footer>
         <div id="footer_logo">
-            <img src="{static % 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
+            <img src="{% static 'imagens/LOGO Apollo.png' %}" alt="Logo do Restaurante Apollo">
         </div>
         <div id="footer_completo">
             <div id="footer_contato">
                 <p>Contato</p>
                 <div id="footer_celular">
-                    <img src="{static % 'imagens/Ícone Telefone.png' %}" alt="Imagem de um celular" width="20px" height="20px">
+                    <img src="{% static 'imagens/Ícone Telefone.png' %}" alt="Imagem de um celular" width="20px" height="20px">
                     <p>(11) 92234-5678</p>
                 </div>
                 
                 <div id="footer_email">
-                    <img src="{static % 'imagens/ÍCONE Email.png' %}" alt="Imagem de uma carta">
+                    <img src="{% static 'imagens/ÍCONE Email.png' %}" alt="Imagem de uma carta">
                     <p>RestauranteApollo@gmail.com</p>
                 </div>
                 <div id="footer_endereco">
-                    <img src="{static % 'imagens/Ícone localização.png' %}" alt="Imagem de uma ponteiro">
+                    <img src="{% static 'imagens/Ícone localização.png' %}" alt="Imagem de uma ponteiro">
                     <p>Avenida Roberto Freire, 123 - Natal/RN</p>
                 </div>
             </div>
@@ -245,18 +245,18 @@
             <div id="footer_redes_sociais">
                 <p>Redes Sociais</p>
                 <div id="icones">
-                    <img src="{static % 'imagens/Ícone facebook.png' %}" alt="">
-                    <img src="{static % 'imagens/Ícone instagram.png' %}" alt="">
-                    <img src="{static % 'imagens/Ícone Twitter.png' %}" alt="">
+                    <img src="{% static 'imagens/Ícone facebook.png' %}" alt="">
+                    <img src="{% static 'imagens/Ícone instagram.png' %}" alt="">
+                    <img src="{% static 'imagens/Ícone Twitter.png' %}" alt="">
                 </div>
                     
             </div>
-            <img src="imagens/loc.png" alt="Foto de mapa">
+            <img src="{% static 'imagens/loc.png' %}" alt="Foto de mapa">
         </div>
         <hr class="linha_curta">
         <div class="EJECT">
             <p class="EJECT_texto">MISSÃO EJECT</p>
-            <img src="imagens/LOGO EJECT.png" alt="">
+            <img src="{% static 'imagens/LOGO EJECT.png' %}" alt="">
         </div>
     </footer>
 
