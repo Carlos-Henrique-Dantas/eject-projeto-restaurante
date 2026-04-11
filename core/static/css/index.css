@@ -75,46 +75,101 @@ button{
     padding: 0.7em;
 }
 
-#secao_experiencia{
-    background-color: peru;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 30em;
-}
-#div_venha_nos_conhecer_titulo_texto{
+#secao_experiencia {
+    background: linear-gradient(to right, #8B4513, #C46A2E); 
+    padding: 90px 5%;
     color: white;
+    min-height: 420px;
+}
+.experiencia-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+.experiencia-texto {
+    flex: 1;
+    min-width: 320px;
+}
+.experiencia-texto h2 {
+    font-size: 2.6em;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.experiencia-texto h3 {
+    font-size: 1.65em;
+    color: #FFDD99;
+    margin: 15px 0 25px;
+    font-weight: 600;
+}
+.experiencia-texto p {
+    font-size: 1.2em;
+    line-height: 1.55;
+    max-width: 460px;
+    margin-bottom: 35px;
+}
+.experiencia-botao-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
-#div_venha_nos_conhecer_titulo_texto h3{
-    font-size: x-large;
-    padding: 1em;
+.experiencia-botao {
+    background-color: #E17100;
+    color: white;
+    border: 2px solid #E17100;
+    padding: 0px 36px;
+    font-size: 1em;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 12px;
 }
-#div_venha_nos_conhecer_texto{
+.experiencia-botao:hover {
+    background-color: #c15a00;
+    transform: translateY(-3px);
+}
+.estrelas {
+    font-size: 2.1em;
+    color: #FFCC00;
+    letter-spacing: 6px;
+    margin-left: 15px;
+}
+.experiencia-fotos {
+    flex: 1;
+    min-width: 320px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2em;
+    gap: 25px;
 }
-#div_experiencia{
-    background-color: black;
-    border: 2px solid white;
-    padding: 1em;
+.experiencia-fotos img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
 }
-#div_secao_experiencia_fotos div{
-    display: grid;
-    grid-template-rows: 10em;
-    position: relative;
-    gap: initial;
+.foto-cima {
+    height: 240px;
+    object-fit: cover;
 }
-#foto_esquerda{
-    position: absolute;
-    top: 80em;
-    left: 50em;
+.foto-baixo {
+    height: 240px;
+    object-fit: cover;
+}
+@media (max-width: 900px) {
+    .experiencia-container {
+        gap: 50px;
+        justify-content: center;
+        text-align: center;
+    }
+    .experiencia-texto {
+        align-items: center;
+    }
+    .experiencia-botao-container {
+        align-items: center;
+    }
 }
 
 #nosso_espaco{
