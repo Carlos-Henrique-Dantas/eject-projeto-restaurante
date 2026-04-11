@@ -101,22 +101,24 @@
         </section>
 
         <section id="secao_experiencia">
-            <div id="div_venha_nos_conhecer_titulo_texto">
-                <h3>Venha conhecer a gente</h3>
-                <div id="div_venha_nos_conhecer_texto">
-                    <p> <b>Aproveite a oportunidade!</b> </p>
-                    <p>Utilize nossos 20% de desconto para ter sua melhor experiência </p>
+            <div class="experiencia-container">
+                <!-- Lado esquerdo - Texto -->
+                <div class="experiencia-texto">
+                    <h2>Venha conhecer a gente</h2>
+                    <h3>Aproveite a oportunidade!</h3>
+                    <p>Utilize nossos 20% de desconto para você ter sua melhor experiência</p>
+                    
+                    <div class="experiencia-botao-container">
+                        <button class="experiencia-botao">SUA MELHOR EXPERIÊNCIA GASTRONÔMICA</button>
+                        <div class="estrelas">★★★★★</div>
+                    </div>
                 </div>
-                <div id="div_experiencia">
-                    <p>SUA MELHOR EXPERIÊNCIA GASTRONÔMICA</p>
+
+                <!-- Lado direito - Fotos -->
+                <div class="experiencia-fotos">
+                    <img src="{% static 'imagens/foto_direita_cima.png' %}" alt="Prato gourmet" class="foto-cima">
+                    <img src="{% static 'imagens/foto_direita_baixo.png' %}" alt="Almôndegas" class="foto-baixo">
                 </div>
-            </div>
-            <div id="div_secao_experiencia_fotos">
-                <div>
-                    <img src="{% static 'imagens/foto_direita_cima.png' %}" alt="Foto de um prato do Restaurante">
-                    <img src="{% static 'imagens/foto_direita_baixo.png' %}" alt="Foto de um prato do Restaurante">
-                </div>
-                <img src="{% static 'imagens/foto_esquerda.png' %}" alt="Foto de um prato do Restaurante" id="foto_esquerda">
             </div>
         </section>
 
