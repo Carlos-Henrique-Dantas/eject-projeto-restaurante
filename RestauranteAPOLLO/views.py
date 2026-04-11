@@ -49,6 +49,8 @@ class ReservaDeleteView(DeleteView):
 def home(request):
     return render(request, 'index.html')
 
+def Sobre_nos(request):
+    return render(request, 'sobre_nos.html')
 
 class PostListView(ListView):
     model = Post

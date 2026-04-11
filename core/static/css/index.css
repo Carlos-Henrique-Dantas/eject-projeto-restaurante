@@ -14,7 +14,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("imagens/bannerprincipal.png");
+    background-image: url("\{% static 'imagens/bannerprincipal.png' %\}");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

@@ -18,8 +18,8 @@
         <nav>       
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'lista_posts' %}">Blog</a></li>
-                <li><a href="#">Sobre nós</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="{% url 'sobre_nos' %}">Sobre nós</a></li>
             </ul>           
         </nav>
         <div>
@@ -116,7 +116,7 @@
                     {% else %}
                         <img src="{% static 'imagens/foto_direita_cima.png' %}" alt="Imagem Padrão">
                     {% endif %}
-                    <p>leganda</p>
+                    <p>legenda</p>
                 </div>
                 <div class="texto_completo_blog">
                     <article>{{ post.conteudo }}</article>

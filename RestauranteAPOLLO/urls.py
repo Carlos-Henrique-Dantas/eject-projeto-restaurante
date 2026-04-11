@@ -10,7 +10,7 @@ urlpatterns = [
     path('reservas/<int:pk>/cancelar/', ReservaCancelView.as_view(), name='cancelar_reserva'),
     path('reservas/<int:pk>/deletar/', ReservaDeleteView.as_view(), name='deletar_reserva'),
     path('', views.home, name='home'),
-    path('', PostListView.as_view(), name='blog'),
-    path('', PostListView.as_view(), name='sobre_nos'),
+    path('blog/', PostListView.as_view(), name='blog'),
+    path('sobre-nos/', views.Sobre_nos, name='sobre_nos'),
     path('blog/<int:pk>/', PostDetailView.as_view(), name='post_detalhe'),
 ]
